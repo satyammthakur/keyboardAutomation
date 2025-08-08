@@ -20,18 +20,6 @@ An interactive C++ project that simulates a keyboard input system with intellige
 - **Core Data Structure:** Trie  
 - **Build Tool:** g++, Makefile (optional)
 
----
-
-## 🧩 Project Structure
-
-/keyboard-automation
-│
-├── include/                 # Header files (IAutoCompleteEngine, Trie, etc.)
-├── src/                     # Source files (Trie logic, KeyboardSystem)
-├── main.cpp                 # Entry point for testing/demo
-├── Makefile                 # Build instructions (optional)
-└── README.md 
-
 ## 🧪 How It Works
 
 1. **Type a character** → Sentence is updated.
