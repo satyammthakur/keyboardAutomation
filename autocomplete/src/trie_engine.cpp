@@ -12,18 +12,26 @@ void TrieSuggestionEngine::dfs(TrieNode* node, std::vector<std::string>& suggest
     }
     
     // Sort children for consistent ordering
-    std::vector<std::pair<char, TrieNode*>> sortedChildren;
-    for (const auto& child : node->getChildren()) {
-        sortedChildren.emplace_back(child.first, child.second.get());
-    }
-    std::sort(sortedChildren.begin(), sortedChildren.end());
+    // std::vector<std::pair<char, TrieNode*>> sortedChildren;
+    // for (const auto& child : node->getChildren()) {
+    //     sortedChildren.emplace_back(child.first, child.second.get());
+    // }
+    // std::sort(sortedChildren.begin(), sortedChildren.end());
     
-    for (const auto& it : sortedChildren) {
-        char ch = it.first;
-        TrieNode* childNode = it.second;
-        path.push_back(ch);
-        dfs(childNode, suggestions, path);
-        path.pop_back();
+    // for (const auto& it : sortedChildren) {
+    //     char ch = it.first;
+    //     TrieNode* childNode = it.second;
+    //     path.push_back(ch);
+    //     dfs(childNode, suggestions, path);
+    //     path.pop_back();
+    // }
+    for (char ch = 'a'; ch <= 'z'; ch++) {
+        TrieNode* childNode = node->get(ch);
+        if (childNode) {
+            path.push_back(ch);
+            dfs(childNode, suggestions, path);
+            path.pop_back();
+        }
     }
 }
 

@@ -62,6 +62,7 @@ void TextPredictionApp::selectSuggestion(const std::string& suggestion) {
         
         suggestionEngine->addWord(suggestion);
         userInterface->displayMessage("Selected: " + suggestion);
+        userInterface->displayCurrentText(currentText);
     }
 }
 
@@ -73,6 +74,7 @@ void TextPredictionApp::handleRegularInput(const std::string& input) {
     }
     
     userInterface->displayCurrentText(currentText);
+    // userInterface->displayCurrentText(currentText);
 }
 
 void TextPredictionApp::run() {

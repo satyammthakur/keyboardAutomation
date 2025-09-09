@@ -17,7 +17,7 @@ void ConsoleUserInterface::displayWelcome() {
 
 std::string ConsoleUserInterface::getUserInput() {
     std::string input;
-    std::cout << "Enter command/character: ";
+    std::cout << "Enter command/text: ";
     std::getline(std::cin, input);
     return input;
 }
@@ -38,7 +38,7 @@ int ConsoleUserInterface::getSelectedSuggestion(int maxOptions) {
     std::cout << "Select suggestion (1-" << maxOptions << "): ";
     std::cin >> choice;
     clearInputBuffer();
-    return choice;
+    return choice; 
 }
 
 void ConsoleUserInterface::displayFinalText(const std::string& text) {
